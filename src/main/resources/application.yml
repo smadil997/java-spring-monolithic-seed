@@ -1,0 +1,30 @@
+server:
+  port: 9098 #  Defind the port number here for you local machine.
+spring:
+  profiles.active: local # defind profile name 
+  application:
+    name: java spring application seed project   # Here is application name, you can change that as you want
+  
+  liquibase:
+    enabled: false # for time being, i disabled the liquidbase but we would that this in future, so on start work on it.
+  cloud: #  for time being, disabled the cloud config as well.
+    config:
+      enabled: false 
+  datasource: # here we will provide our data config as we want, i my case i am going to use mysql.
+    url: jdbc:mysql://localhost:3306/sys
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa: # Config you jpa properties
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
+  thymeleaf:
+    enabled: false    
+
+ 
+     
+#management:
+ # security:
+    #enabled: false  #disable the spring security on the management endpoints like /env, /refresh etc. 
